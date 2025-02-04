@@ -9,8 +9,5 @@
         {
             "name": "crisciany"
         }
-    ],
-    "require-dev": {
-        "behat/behat": "^3.15"
-    }
+    ]
 }
