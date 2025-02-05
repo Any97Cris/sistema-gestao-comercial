@@ -21,7 +21,7 @@
       <div class="col-md-4"></div>
       <div class="col-md-4" style="margin-top: 150px">
         <center>
-          <img src="https://hypecursos.com.br/wp-content/uploads/2021/04/logo-hype-cursos-branca-300x126.png">
+          <img src="./src/images/logo.svg">
 
         </center>
         <br><br>
@@ -67,13 +67,6 @@
     </div>
 
   </div>
-
-
-
-
-
-
-
-
+  
 </body>
 </html>
