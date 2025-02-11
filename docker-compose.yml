@@ -6,6 +6,8 @@ services:
     volumes:
       - .docker/nginx/:/etc/nginx/conf.d/ 
       - ./public:/var/www/html/public
+    networks:
+      - sistema-gestao-comercial-network
 
   php:
     build: .docker/php
@@ -18,3 +20,22 @@ services:
       - TZ=${TZ:-America/Sao_Paulo}
       - XDEBUG_CONFIG=${XDEBUG_CONFIG:-client_host=172.17.0.1 start_with_request=yes}
       - XDEBUG_MODE=${XDEBUG_MODE:-debug}
+    networks:
+      - sistema-gestao-comercial-network
+
+  mysql:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    restart: always
+    tty: true
+    volumes: 
+      - ./.docker/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=db_dashboard
+      - MYSQL_ROOT_PASSWORD=root@
+    networks:
+      - sistema-gestao-comercial-network
+
+networks:
+  sistema-gestao-comercial-network:
+    driver: bridge
