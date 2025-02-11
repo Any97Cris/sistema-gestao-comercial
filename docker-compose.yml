@@ -33,9 +33,12 @@ services:
     environment:
       - MYSQL_DATABASE=db_dashboard
       - MYSQL_ROOT_PASSWORD=root@
+    ports:
+      - "3307:3306"
     networks:
       - sistema-gestao-comercial-network
 
 networks:
   sistema-gestao-comercial-network:
+    name: sistema-gestao-comercial-network
     driver: bridge
