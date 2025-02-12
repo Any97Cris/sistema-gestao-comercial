@@ -6,6 +6,9 @@ RUN chmod uga+x /usr/local/bin/install-php-extensions && sync \
     && install-php-extensions \
     gd \
     xdebug \
+    mysqli \
+    pdo \
+    pdo_mysql \
     zip \
     @composer \
     && rm /usr/local/bin/install-php-extensions
